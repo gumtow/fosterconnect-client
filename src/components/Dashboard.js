@@ -28,7 +28,7 @@ export default class Dashboard extends Component {
 
 
     getChildData(){
-        axios.get("http://localhost:3001/children", {withCredentials: true}).then(response => {
+        axios.get("https://fosterconnect-client.herokuapp.com/children", {withCredentials: true}).then(response => {
             this.setState({
                 children: response.data
             })
@@ -65,7 +65,7 @@ export default class Dashboard extends Component {
         // formData.append("video", this.state.video)
         // console.log(this.state.selectedFile);
 
-        axios.post("http://localhost:3001/items", formData, {withCredentials: true})
+        axios.post("https://fosterconnect-client.herokuapp.com/items", formData, {withCredentials: true})
         .then( response =>{
             console.log(response);
         }).catch(error => {
@@ -100,7 +100,7 @@ export default class Dashboard extends Component {
     
 
     handleSubmit(event) {
-        axios.post("http://localhost:3001/children", {
+        axios.post("https://fosterconnect-client.herokuapp.com/children", {
                 name: this.state.name,
                 status: this.state.status,
                 pictures: this.state.pictures,
@@ -123,7 +123,7 @@ export default class Dashboard extends Component {
     };
 
     handleLogoutClick=()=> {
-        axios.delete("http://localhost:3001/logout", { withCredentials: true }).then(response =>{
+        axios.delete("https://fosterconnect-client.herokuapp.com/logout", { withCredentials: true }).then(response =>{
             this.props.handleLogout();
             this.props.history.push("/");
         }).catch(error => {
@@ -132,7 +132,7 @@ export default class Dashboard extends Component {
     }
 
     handleDelete(id){
-        axios.delete(`http://localhost:3001/children/${id}`, { withCredentials: true }).then(response =>{
+        axios.delete(`https://fosterconnect-client.herokuapp.com/children/${id}`, { withCredentials: true }).then(response =>{
             console.log(response);
             this.getChildData();
         }).catch(error => {

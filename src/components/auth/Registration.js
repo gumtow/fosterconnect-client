@@ -22,7 +22,7 @@ export default class Registration extends Component {
     };
 
     handleSubmit(event) {
-        axios.post("http://localhost:3001/registrations", {
+        axios.post("https://fosterconnect-client.herokuapp.com/registrations", {
             user: {
                 email: this.state.email,
                 password: this.state.password,
