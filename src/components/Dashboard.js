@@ -54,8 +54,6 @@ export default class Dashboard extends Component {
         axios.post("https://fosterconnect-api.herokuapp.com/children", {
                 name: this.state.name,
                 status: this.state.status,
-                pictures: this.state.pictures,
-                documents: this.state.documents,
                 user_id: this.props.user.id
         }, 
         { withCredentials: true }

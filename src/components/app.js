@@ -26,7 +26,7 @@ import Registration from './auth/Registration';
   }
 
   checkLoginStatus(){
-    axios.get("https://fosterconnect-api.herokuapp.com", { withCredentials: true }).then(response => {
+    axios.get("https://fosterconnect-api.herokuapp.com/logged_in", { withCredentials: true }).then(response => {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN"){
         this.setState({
           loggedInStatus: "LOGGED_IN",
