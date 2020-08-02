@@ -49,7 +49,7 @@ import Registration from './auth/Registration';
 
   handleSuccessfulAuth(data) {
     this.handleLogin(data);
-    // history.push("/dashboard");
+    
 }
 
   handleLogout(){
@@ -64,6 +64,7 @@ import Registration from './auth/Registration';
       loggedInStatus: "LOGGED_IN",
       user: data.user
     })
+    history.push("/dashboard");
 
   }
 
