@@ -49,7 +49,7 @@ import Registration from './auth/Registration';
 
   handleSuccessfulAuth(data) {
     this.handleLogin(data);
-    history.push("/dashboard");
+    // history.push("/dashboard");
 }
 
   handleLogout(){
