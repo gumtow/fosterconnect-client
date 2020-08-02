@@ -20,7 +20,7 @@ export default class ChildEdit extends Component {
 
 
     getChildData(){
-        axios.get(`https://fosterconnect-client.herokuapp.com/children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
+        axios.get(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
             this.setState({
                 child: response.data
             })
@@ -39,7 +39,7 @@ export default class ChildEdit extends Component {
     };
 
     handleSubmit(event) {
-        axios.put(`https://fosterconnect-client.herokuapp.com/children/${this.props.match.params.id}`, {
+        axios.put(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, {
                 name: this.state.name,
                 status: this.state.status
         }, 
@@ -72,7 +72,7 @@ export default class ChildEdit extends Component {
             formData.append("file", this.state.file)
             // console.log(this.state.selectedFile);
     
-            axios.post("https://fosterconnect-client.herokuapp.com/items", formData, {withCredentials: true})
+            axios.post("https://fosterconnect-api.herokuapp.com/items", formData, {withCredentials: true})
             .then( response =>{
                 console.log(response);
             }).catch(error => {
@@ -81,7 +81,7 @@ export default class ChildEdit extends Component {
         };
 
     handleLogoutClick=()=> {
-        axios.delete("https://fosterconnect-client.herokuapp.com/logout", { withCredentials: true }).then(response =>{
+        axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response =>{
             this.props.handleLogout();
             this.props.history.push("/");
         }).catch(error => {

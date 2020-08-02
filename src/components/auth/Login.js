@@ -22,7 +22,7 @@ export default class Login extends Component {
     };
 
     handleSubmit(event) {
-        axios.post("https://fosterconnect-client.herokuapp.com/sessions", {
+        axios.post("https://fosterconnect-api.herokuapp.com/sessions", {
             user: {
                 email: this.state.email,
                 password: this.state.password

@@ -16,7 +16,7 @@ export default class ChildShow extends Component {
 
 
     getChildData(){
-        axios.get(`https://fosterconnect-client.herokuapp.com//children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
+        axios.get(`https://fosterconnect-api.herokuapp.com//children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
             this.setState({
                 child: response.data
             })
@@ -30,7 +30,7 @@ export default class ChildShow extends Component {
     }
 
     handleLogoutClick=()=> {
-        axios.delete("https://fosterconnect-client.herokuapp.com//logout", { withCredentials: true }).then(response =>{
+        axios.delete("https://fosterconnect-api.herokuapp.com//logout", { withCredentials: true }).then(response =>{
             this.props.handleLogout();
             this.props.history.push("/");
         }).catch(error => {

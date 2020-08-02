@@ -16,7 +16,7 @@ export default class UserEdit extends Component {
     }
 
     checkLoginStatus(){
-        axios.get("https://fosterconnect-client.herokuapp.com/logged_in", { withCredentials: true }).then(response => {
+        axios.get("https://fosterconnect-api.herokuapp.com/logged_in", { withCredentials: true }).then(response => {
           if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN"){
             this.setState({
               loggedInStatus: "LOGGED_IN",
@@ -44,7 +44,7 @@ export default class UserEdit extends Component {
     };
 
     handleSubmit(event) {
-        axios.put(`https://fosterconnect-client.herokuapp.com/registrations/${this.props.user.id}`, {
+        axios.put(`https://fosterconnect-api.herokuapp.com/registrations/${this.props.user.id}`, {
             user: {
                 email: this.state.email,
                 password: this.state.password,
