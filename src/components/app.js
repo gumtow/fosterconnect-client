@@ -64,7 +64,7 @@ import Registration from './auth/Registration';
       loggedInStatus: "LOGGED_IN",
       user: data.user
     })
-    history.push("/dashboard");
+    // history.push("/dashboard");
 
   }
 
