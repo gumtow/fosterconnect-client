@@ -43,8 +43,8 @@ export default class ChildEdit extends Component {
                 name: this.state.name,
                 status: this.state.status
         }, 
-        this.onFileUpload(),
-        { withCredentials: true }
+        { withCredentials: true },
+        this.onFileUpload()
         ).then(response =>{
             this.props.history.push("/dashboard");
             }
@@ -98,7 +98,7 @@ export default class ChildEdit extends Component {
                     <form onSubmit={this.handleSubmit} >
                         <input type="string" name="name" value={this.state.child.name} onChange={this.handleChange} required />
                         <input type="string" name="status" value={this.state.child.status} onChange={this.handleChange} required />
-                        <input type="file" name="image" placeholder="Upload an image" onChange={this.onFileChange} required />
+                        <input type="file" name="image" placeholder="Upload an image" onChange={this.onFileChange}  />
                         <input type="file" name="file" placeholder="Upload a document" onChange={this.onFileChange} />
                         <button type="submit">Update Child</button>
                     </form>

@@ -61,9 +61,7 @@ export default class Dashboard extends Component {
             // console.log(response);
             this.setState({
                 name:"",
-                status:"Active",
-                pictures: [],
-                documents:[]
+                status:"Active"
             })
             }
         );
