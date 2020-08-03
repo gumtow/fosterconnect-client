@@ -55,7 +55,7 @@ export default class ChildShow extends Component {
                         <h1>Hello {this.state.child.name}</h1>
                         <Link to={`/children/${this.state.child.id}/edit`}><button>Edit</button></Link>
                         <div>
-                            {this.state.items.map((item, i)=>{
+                            {this.state.items && this.state.items.map((item, i)=>{
                                 if (item.child_id === this.state.child.id){
                                     return(
                                         <div key={i}>
