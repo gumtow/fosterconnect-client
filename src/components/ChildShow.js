@@ -50,11 +50,22 @@ export default class ChildShow extends Component {
         if (this.state.child){
             return(
                 <Default>
-                <div>
-                    <button onClick={()=>this.handleLogoutClick()}>Logout</button>
-                    <h1>Hello {this.state.child.name}</h1>
-                    <Link to={`/children/${this.state.child.id}/edit`}><button>Edit</button></Link>
-                </div>
+                    <div>
+                        <button onClick={()=>this.handleLogoutClick()}>Logout</button>
+                        <h1>Hello {this.state.child.name}</h1>
+                        <Link to={`/children/${this.state.child.id}/edit`}><button>Edit</button></Link>
+                        <div>
+                            {this.state.items.map((item, i)=>{
+                                if (item.child_id === this.state.child.id){
+                                    return(
+                                        <div key={i}>
+                                            <img src={item.image} alt={item.id}/>
+                                        </div>
+                                    )
+                                }
+                            })}
+                        </div>
+                    </div>
                 </Default>
             )
         } else {
