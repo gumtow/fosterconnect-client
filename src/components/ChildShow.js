@@ -17,12 +17,19 @@ export default class ChildShow extends Component {
 
 
     getChildData(){
-        axios.get(`https://fosterconnect-api.herokuapp.com//children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
+        axios.get(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
             this.setState({
                 child: response.data
             })
         }).catch(error => {
             console.log("children db", error);
+        })
+        axios.get(`https://fosterconnect-api.herokuapp.com/items`, {withCredentials: true}).then(response => {
+            this.setState({
+                items: response.data
+            })
+        }).catch(error => {
+            console.log("item db", error);
         })
     }
 
