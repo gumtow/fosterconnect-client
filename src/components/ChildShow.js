@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Default from '../../Default';
 
 
 export default class ChildShow extends Component {
@@ -41,11 +42,13 @@ export default class ChildShow extends Component {
     render(){
         if (this.state.child){
             return(
+                <Default>
                 <div>
                     <button onClick={()=>this.handleLogoutClick()}>Logout</button>
                     <h1>Hello {this.state.child.name}</h1>
                     <Link to={`/children/${this.state.child.id}/edit`}><button>Edit</button></Link>
                 </div>
+                </Default>
             )
         } else {
             return "...loading"

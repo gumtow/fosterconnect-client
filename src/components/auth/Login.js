@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Default from '../../Default';
 
 export default class Login extends Component {
     constructor(props){
@@ -42,6 +43,7 @@ export default class Login extends Component {
     
   render() {
     return (
+        <Default>
       <div className='registration'>
         <form onSubmit={this.handleSubmit} >
             <input type="email" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} required />
@@ -51,6 +53,7 @@ export default class Login extends Component {
         </form>
         <Link to="/register">Don't have an account?</Link>
       </div>
+      </Default>
     );
   }
 }

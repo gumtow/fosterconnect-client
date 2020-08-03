@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Default from '../../Default';
 
 export default class Registration extends Component {
     constructor(props){
@@ -42,6 +43,7 @@ export default class Registration extends Component {
     
   render() {
     return (
+        <Default>
       <div className='registration'>
         <form onSubmit={this.handleSubmit} >
             <input type="email" name="email" placeholder="email" value={this.state.email} onChange={this.handleChange} required />
@@ -50,6 +52,7 @@ export default class Registration extends Component {
             <button type="submit">register</button>
         </form>
       </div>
+      </Default>
     );
   }
 }
