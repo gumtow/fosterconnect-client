@@ -32,6 +32,10 @@ export default class ChildEdit extends Component {
 
     componentDidMount(){
         this.getChildData();
+        this.setState({
+            name: this.state.child.name,
+            status: this.state.child.status
+        })
     }
 
     handleChange(event) {
