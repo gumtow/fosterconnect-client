@@ -70,7 +70,7 @@ export default class ChildShow extends Component {
                                 if (item.child_id === this.state.child.id){
                                     return(
                                         <div key={i}>
-                                            <a href={item.file} >{this.state.child.name} doc {i}</a>
+                                            <a href={item.file} download>{this.state.child.name} doc {i}</a>
                                         </div>
                                     )
                                 }
