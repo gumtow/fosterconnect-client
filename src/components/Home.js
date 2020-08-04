@@ -22,6 +22,7 @@ export default class Home extends Component {
   
 
   render() {
+    let page = "";
     return (
       <div className='home'>
 
@@ -35,6 +36,8 @@ export default class Home extends Component {
 
       {/* Body content */}
         <Default bg="#fff">
+          <button onClick={page="login"}>login test</button>
+          {page === "login" ? <Login {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} handleSuccessfulAuth={this.handleSuccessfulAuth} /> : ""}
           <h1>Body content</h1>
         </Default>
 
