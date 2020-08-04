@@ -32,10 +32,7 @@ export default class ChildEdit extends Component {
 
     componentDidMount(){
         this.getChildData();
-        this.setState({
-            name: this.state.child.name,
-            status: this.state.child.status
-        })
+       
     }
 
     handleChange(event) {
@@ -96,6 +93,10 @@ export default class ChildEdit extends Component {
 
     render(){
         if (this.state.child){
+            this.setState({
+                name: this.state.child.name,
+                status: this.state.child.status
+            });
             return(
                 <Default>
                 <div>
