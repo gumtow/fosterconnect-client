@@ -10,8 +10,8 @@ export default class ChildEdit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            image: {},
-            file: {}
+            image: "",
+            file: ""
             
         };
         this.handleSubmit = this.handleSubmit.bind(this);

@@ -38,7 +38,7 @@ export default class ChildShow extends Component {
     }
 
     handleLogoutClick=()=> {
-        axios.delete("https://fosterconnect-api.herokuapp.com//logout", { withCredentials: true }).then(response =>{
+        axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response =>{
             this.props.handleLogout();
             this.props.history.push("/");
         }).catch(error => {
