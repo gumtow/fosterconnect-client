@@ -23,7 +23,9 @@ export default class ChildEdit extends Component {
     getChildData(){
         axios.get(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
             this.setState({
-                child: response.data
+                child: response.data,
+                name: response.data.name,
+                status: response.data.status
             })
         }).catch(error => {
             console.log("children db", error);
@@ -93,10 +95,6 @@ export default class ChildEdit extends Component {
 
     render(){
         if (this.state.child){
-            this.setState({
-                name: this.state.child.name,
-                status: this.state.child.status
-            });
             return(
                 <Default>
                 <div>
