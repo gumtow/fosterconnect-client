@@ -33,19 +33,20 @@ export default class Home extends Component {
           {this.props.loggedInStatus === "NOT_LOGGED_IN" ? <Link to="/login"><button>Log In</button></Link> : <button onClick={()=>this.handleLogoutClick()} >Logout</button> }
         </Default>
 
-        <Default bg="url(https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/header-bg-edit%201header.png)" height="300px">
+        {/* Header */}
+        <Default bg="url(https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/header-bg-edit%201header.png)" height="700px">
 
         </Default>
 
 
       {/* Body content */}
-        <Default bg="#fff">
+        <Default bg="#fff" height="50vh">
           <h1>Body content</h1>
         </Default>
 
 
       {/* Footer */}
-        <Default bg="#495867">
+        <Default bg="#495867" height="500px">
 
         </Default>
 
