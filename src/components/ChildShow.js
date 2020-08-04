@@ -65,6 +65,17 @@ export default class ChildShow extends Component {
                                 }
                             })}
                         </div>
+                        <div>
+                            {this.state.items && this.state.items.map((item, i)=>{
+                                if (item.child_id === this.state.child.id){
+                                    return(
+                                        <div key={i}>
+                                            <a href={item.file} >{this.state.child.name} doc {i}</a>
+                                        </div>
+                                    )
+                                }
+                            })}
+                        </div>
                     </div>
                 </Default>
             )
