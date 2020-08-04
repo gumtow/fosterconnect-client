@@ -23,12 +23,11 @@ export default class Home extends Component {
   
 
   render() {
-    let page = "";
     return (
       <div className='home'>
 
         {/* Nav Header */}
-        <Default bg="#495867">
+        <Default bg="#495867" height="100px">
           <h1>Home</h1>
           <h2>Status: {this.props.loggedInStatus}</h2>
           {this.props.loggedInStatus === "NOT_LOGGED_IN" ? <Link to="/login"><button>Log In</button></Link> : <button onClick={()=>this.handleLogoutClick()} >Logout</button> }
@@ -37,8 +36,6 @@ export default class Home extends Component {
 
       {/* Body content */}
         <Default bg="#fff">
-          <button onClick={page="login"}>login test</button>
-          {page === "login" ? <Login {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} handleSuccessfulAuth={this.handleSuccessfulAuth} /> : ""}
           <h1>Body content</h1>
         </Default>
 
