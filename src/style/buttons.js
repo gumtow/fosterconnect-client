@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {COLORS, SIZES } from './constants'
 
-export const Button = styled.button `
+export const Button = styled.div `
     padding: 1rem ;
     margin: 0 auto;
     font-family: 'Source Serif Pro', serif;
