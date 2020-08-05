@@ -7,7 +7,7 @@ export const Button = styled.button `
     font-family: 'Source Serif Pro', serif;
     font-weight: 900;
     color:${COLORS.white};
-    background: ${COLORS.primary};
+    background:${COLORS.primary};
     border: none;
     border-radius: 3rem;
     font-size: 3rem;

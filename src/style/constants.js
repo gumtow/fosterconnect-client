@@ -4,7 +4,7 @@ export const COLORS = {
     primary: '#ce796b',
     secondary: '#e7ad99',
     light: '#e5e5e5',
-    white: '#fff'
+    white: '#ffffff'
 
   }
  export const SIZES = [
