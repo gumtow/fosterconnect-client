@@ -1,9 +1,9 @@
-const COLORS = {
+export const COLORS = {
     text: 'black',
     background: '#C18C5D',
     primary: 'rebeccapurple',
   }
-  const SIZES = [
+ export const SIZES = [
     8,
     16,
     24,
