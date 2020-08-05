@@ -4,6 +4,7 @@ import Default from '../Default';
 import { Link } from 'react-router-dom';
 import Login from './auth/Login';
 import * as Headings from '../style/type';
+import Button from '../style/buttons';
 
 export default class Home extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export default class Home extends Component {
         <Default bg="url(https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/header-bg-edit%201header.png)" height="700px">
             <Headings.H1>Parenting is hard.</Headings.H1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.</p>
-            <button>Sign up</button>
+            <Button>Sign up</Button>
 
         </Default>
 
