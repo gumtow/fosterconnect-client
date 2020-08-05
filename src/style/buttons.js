@@ -11,4 +11,9 @@ export const Button = styled.button `
     border: none;
     border-radius: 3rem;
     font-size: 3rem;
+    transition: background 0.5s ease;
+
+    :hover{
+        background:${COLORS.secondary};
+    }
 `;
