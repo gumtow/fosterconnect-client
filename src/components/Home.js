@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Login from './auth/Login';
 import * as Headings from '../style/type';
 import { Button } from '../style/buttons';
-import { HeaderContent } from '../style/header;
+import { HeaderContent } from '../style/header';
 
 export default class Home extends Component {
     constructor(props) {
