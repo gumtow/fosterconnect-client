@@ -4,7 +4,7 @@ import Default from '../Default';
 import { Link } from 'react-router-dom';
 import Login from './auth/Login';
 import * as Headings from '../style/type';
-import Button from '../style/buttons';
+import { Button } from '../style/buttons';
 
 export default class Home extends Component {
     constructor(props) {
