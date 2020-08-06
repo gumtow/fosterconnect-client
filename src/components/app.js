@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, withRouter, Link } from 'react-router-dom';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import ChildShow from './ChildShow';
@@ -9,9 +9,15 @@ import UserEdit from './auth/UserEdit';
 import Login from './auth/Login';
 import history from './history';
 import Registration from './auth/Registration';
+import Default from '../Default';
+import { Nav } from '../style/nav';
+import { AuthBtn } from '../style/buttons';
+import * as Headings from '../style/type';
+import { FlexContainer } from '../style/default';
+import { COLORS } from '../style/constants';
 
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
 
@@ -21,6 +27,7 @@ class App extends Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
   }
@@ -57,6 +64,15 @@ class App extends Component {
       loggedInStatus: "NOT_LOGGED_IN",
       user: {}
     })
+    history.push("/");
+  }
+
+  handleLogoutClick() {
+    axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response => {
+      this.handleLogout();
+    }).catch(error => {
+      console.log("logout error", error);
+    });
   }
 
   handleLogin(data) {
@@ -64,7 +80,7 @@ class App extends Component {
       loggedInStatus: "LOGGED_IN",
       user: data.user
     })
-    history.push("/dashboard").preventDefault();
+    history.push("/dashboard");
 
   }
 
@@ -72,6 +88,18 @@ class App extends Component {
     return (
       <div className='app'>
         <BrowserRouter>
+         {/* Nav Header */}
+         <Default bg="#495867" height="100px">
+          <Nav>
+            <h1>FosterConnect</h1>
+            {/* <h2>Status: {this.props.loggedInStatus}</h2> */}
+
+            {this.state.loggedInStatus === "NOT_LOGGED_IN" ? <Link to="/login"><AuthBtn>Log In</AuthBtn></Link> : <AuthBtn onClick={() => this.handleLogoutClick()} >Logout</AuthBtn>}
+
+          </Nav>
+        </Default>
+        
+        
           <Switch>
             <Route
               exact path={"/"}
@@ -116,10 +144,34 @@ class App extends Component {
               )}
             />
           </Switch>
+
+        {/* Footer */}
+        <Default bg="#495867" padding="2rem" footer height="650px">
+          <FlexContainer reverse="column">
+            <Headings.H3 center padding="1rem 12rem">
+              "I alone cannot change the world, but I can cast a stone across the waters to create many ripples."
+          </Headings.H3>
+            <Headings.P>
+              Mother Teresa
+            </Headings.P>
+          </FlexContainer>
+          <FlexContainer reverse="column">
+            <Headings.P>
+              Created &amp; Designed with love in Austin, TX by
+              </Headings.P>
+            <Headings.P color={COLORS.gold}>
+              Jesse Gumtow
+            </Headings.P>
+          </FlexContainer>
+          <FlexContainer>
+            <Headings.P>
+              <Headings.A href="#" target="_blank">GitHub</Headings.A>  |  <Headings.A href="#" target="_blank">LinkedIn</Headings.A>  |  <Headings.A href="#" target="_blank">Medium</Headings.A>
+          </Headings.P>
+          </FlexContainer>
+        </Default>
+
         </BrowserRouter>
       </div>
     );
   }
 }
-
-export default withRouter(App);

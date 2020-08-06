@@ -2,61 +2,84 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Default from '../Default';
 import { Link } from 'react-router-dom';
-import Login from './auth/Login';
 import * as Headings from '../style/type';
 import { Button } from '../style/buttons';
 import { HeaderContent } from '../style/header';
+import { FlexContainer } from '../style/default';
+import { COLORS } from '../style/constants';
 
 export default class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    
+  }
 
 
-    handleLogoutClick() {
-        axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response =>{
-            this.props.handleLogout();
-        }).catch(error => {
-            console.log("logout error", error);
-        });       
-    }
 
 
-  
+
+
 
   render() {
     return (
       <div className='home'>
 
-        {/* Nav Header */}
-        <Default bg="#495867" height="100px">
-          <h1>Home</h1>
-          <h2>Status: {this.props.loggedInStatus}</h2>
-          {this.props.loggedInStatus === "NOT_LOGGED_IN" ? <Link to="/login"><button>Log In</button></Link> : <button onClick={()=>this.handleLogoutClick()} >Logout</button> }
-        </Default>
+       
 
         {/* Header */}
         <Default bg="url(https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/header-bg-edit%201header.png)" height="700px">
           <HeaderContent>
             <Headings.H1>Parenting is hard.</Headings.H1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.</p>
-            <Button>Sign up</Button>
-            </HeaderContent>
+            <Headings.P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.</Headings.P>
+            <Link to="/register"><Button>Sign up</Button></Link>
+          </HeaderContent>
         </Default>
 
 
-      {/* Body content */}
-        <Default bg="#fff" height="50vh">
-          <h1>Body content</h1>
+        {/* Body content */}
+        <Default bg="#fff" padding="2rem 8rem">
+          <Headings.H1 darkBlue center>Why We Exist</Headings.H1>
+          <FlexContainer>
+            <div>
+              <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
+            </div>
+            <div>
+              <Headings.H2>Connect</Headings.H2>
+              <Headings.P color={COLORS.darkBlue}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
+            </Headings.P>
+            </div>
+          </FlexContainer>
+          <FlexContainer reverse="row-reverse">
+            <div>
+              <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
+            </div>
+            <div>
+              <Headings.H2>Stay Organized</Headings.H2>
+              <Headings.P color={COLORS.darkBlue}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
+            </Headings.P>
+            </div>
+          </FlexContainer>
+          <FlexContainer>
+            <div>
+              <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
+            </div>
+            <div>
+              <Headings.H2>Find Resources</Headings.H2>
+              <Headings.P color={COLORS.darkBlue}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
+            </Headings.P>
+            </div>
+          </FlexContainer>
+          <FlexContainer>
+            <Link to="/register"><Button>Sign up</Button></Link>
+          </FlexContainer>
+
         </Default>
 
 
-      {/* Footer */}
-        <Default bg="#495867" height="500px">
-
-        </Default>
-
+       
       </div>
     );
   }

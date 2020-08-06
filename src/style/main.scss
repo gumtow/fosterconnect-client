@@ -21,8 +21,29 @@ body {
     // -webkit-tap-highlight-color: transparent;
 }
 
-.app {
+.app-wrapper {
     // margin-top: 2rem;
     // display: grid;
     // justify-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.app {
+    padding-bottom: 650px;
+}
+
+input {
+
+    min-height: 2rem;
+    border-radius: 3rem;
+    border: 1px solid #d4d4d4;
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 1.5rem;
+
+}
+
+a {
+    text-decoration: none;
 }
