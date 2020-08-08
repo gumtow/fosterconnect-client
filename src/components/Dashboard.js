@@ -78,21 +78,6 @@ export default class Dashboard extends Component {
 
 
     handleSubmit(event) {
-
-        // const formData = new FormData();
-
-        // formData.append("image", this.state.image)
-        // formData.append("name", this.state.name)
-        // formData.append("status", this.state.status)
-        // formData.append("description", this.state.description)
-        // formData.append("user_id", this.props.user.id)
-
-        // axios.post("https://fosterconnect-api.herokuapp.com/children", formData, { withCredentials: true })
-        //     .then(response => {
-        //         console.log(response);
-        //     }).catch(error => {
-        //         console.log("ITEM ERROR", error);
-        //     });
             
             axios.post("https://fosterconnect-api.herokuapp.com/children", {
             name: this.state.name,
@@ -107,7 +92,7 @@ export default class Dashboard extends Component {
                 name: "",
                 status: "Active",
                 image: "",
-                decription: ""
+                description: ""
             })
         }
         );
