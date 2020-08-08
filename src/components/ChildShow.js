@@ -76,8 +76,8 @@ export default class ChildShow extends Component {
                             {this.state.items && this.state.items.map((item, i) => {
                                 if (item.file && (item.child_id === this.state.child.id)) {
                                     return (
-                                        <div key={i}>
-                                            <a href={`${item.file} .jpg`}>{this.state.child.name} doc {i}</a>
+                                        <div className="doc" key={i}>
+                                            <Headings.H3 darkBlue>Doc {i}</Headings.H3>
                                         </div>
                                     )
                                 }
