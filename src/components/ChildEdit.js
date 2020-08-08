@@ -61,7 +61,7 @@ export default class ChildEdit extends Component {
                 status: this.state.status, 
                 description: this.state.description
         }, 
-        this.onFileUpload()
+        this.onFileUpload(),
         { withCredentials: true },
         
         ).then(response =>{
