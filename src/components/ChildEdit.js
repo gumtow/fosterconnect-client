@@ -61,9 +61,8 @@ export default class ChildEdit extends Component {
                 status: this.state.status, 
                 description: this.state.description
         }, 
-        this.onFileUpload(),
         { withCredentials: true },
-        
+        this.onFileUpload()
         ).then(response =>{
             this.props.history.push("/dashboard");
             }
