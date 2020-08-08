@@ -91,7 +91,6 @@ export default class Dashboard extends Component {
             this.setState({
                 name: "",
                 status: "Active",
-                image: "",
                 description: ""
             })
         }
