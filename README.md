@@ -59,10 +59,10 @@ As a foster parent you are required to complete a significant amount of document
 - App built with React and Ruby on Rails
 - CRUD functionality for user accounts
 - CRUD functionality for child profiles
-- Use React Redux to handle state
 - Deploy site using Heroku
 
 #### Stretch Goals
+- Use React Redux to handle state
 - Lazy loading
 - Create & Send messages via messageboard
 - Create a dynamic slideshow from pictures
