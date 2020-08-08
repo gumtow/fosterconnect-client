@@ -2,6 +2,28 @@
 
 As a foster parent you are required to complete a significant amount of documentation and training. This is an ongoing process and is required for each child on multiple occassions. It can also be difficult for foster parents to find a support netowrk of other foster parents. The Foster Connect app will allow foster parents to create an account that gives them the ability to connect with other foster parents. They will also be able to create profiles for the children in thier care to keep documents and information organized. 
 
+
+# Technologies
+
+- React
+- Ruby
+- Rails
+- axios
+- Cloudinary
+- Heroku
+- JavaScript
+- Webpack
+
+
+# Challenges
+
+- Implementing redux (ran out of time)
+- User authentication over cross-linked urls
+- User profile images (cloudinary api)
+- Document downloading (cloudinary api)
+
+
+
 # 
 # Project Timeline
 
