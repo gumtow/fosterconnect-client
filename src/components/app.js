@@ -91,7 +91,7 @@ export default class App extends Component {
          {/* Nav Header */}
          <Default bg="#495867" height="100px">
           <Nav>
-            <h1>FosterConnect</h1>
+            <h1><Link to="/">FosterConnect</Link></h1>
             {/* <h2>Status: {this.props.loggedInStatus}</h2> */}
 
             {this.state.loggedInStatus === "NOT_LOGGED_IN" ? <Link to="/login"><AuthBtn>Log In</AuthBtn></Link> : <AuthBtn onClick={() => this.handleLogoutClick()} >Logout</AuthBtn>}
