@@ -10,6 +10,7 @@ export const Button = styled.button `
     background:${COLORS.primary};
     border: none;
     border-radius: 3rem;
+    box-sizing: border-box;
     font-size: 2rem;
     transition: background 0.5s ease;
     cursor: pointer;
@@ -32,4 +33,19 @@ export const AuthBtn = styled(Button) `
         background:${COLORS.white};
         color:${COLORS.gold};
     }
+`;
+
+export const EditBtn = styled(Button) `
+padding: .5rem 2rem;
+margin: .5rem 0;
+width: 100%;
+color:${COLORS.white};
+background:${COLORS.gold};
+font-size: 1rem;
+
+
+:hover{
+    background:${COLORS.darkBlue};
+    color:${COLORS.white};
+}
 `;

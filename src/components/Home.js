@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import * as Headings from '../style/type';
 import { Button } from '../style/buttons';
 import { HeaderContent } from '../style/header';
-import { FlexContainer } from '../style/default';
+import { FlexContainer, HomeGrid } from '../style/default';
 import { COLORS } from '../style/constants';
 
 export default class Home extends Component {
@@ -39,7 +39,7 @@ export default class Home extends Component {
         {/* Body content */}
         <Default bg="#fff" padding="2rem 8rem">
           <Headings.H1 darkBlue center>Why We Exist</Headings.H1>
-          <FlexContainer>
+          <HomeGrid>
             <div>
               <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
             </div>
@@ -49,19 +49,19 @@ export default class Home extends Component {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
             </Headings.P>
             </div>
-          </FlexContainer>
-          <FlexContainer reverse="row-reverse">
-            <div>
+          </HomeGrid>
+          <HomeGrid reverse>
+            <div className="a">
               <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
             </div>
-            <div>
+            <div className="b">
               <Headings.H2>Stay Organized</Headings.H2>
               <Headings.P color={COLORS.darkBlue}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
             </Headings.P>
             </div>
-          </FlexContainer>
-          <FlexContainer>
+          </HomeGrid>
+          <HomeGrid>
             <div>
               <img src="https://raw.githubusercontent.com/gumtow/fosterconnect-client/master/static/assets/img/circle.png" alt="placeholder" />
             </div>
@@ -71,7 +71,7 @@ export default class Home extends Component {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit ut amet rhoncus, nunc ullamcorper proin cras. Vel integer euismod nisl venenatis commodo maecenas pellentesque. Euismod commodo et nibh pulvinar lobortis consectetur dictum. Sit risus fusce ullamcorper cursus ut sed felis mi habitant.
             </Headings.P>
             </div>
-          </FlexContainer>
+          </HomeGrid>
           <FlexContainer>
             <Link to="/register"><Button>Sign up</Button></Link>
           </FlexContainer>

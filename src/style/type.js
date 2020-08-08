@@ -5,7 +5,7 @@ import {COLORS, SIZES } from './constants';
 // Headings
 export const H1 = styled.h1 `
     padding: 1rem 0rem;
-    margin: 0 auto;
+    margin: ${props => props.margin ? props.margin : "0 auto" };
     font-family: 'Source Serif Pro', serif;
     font-weight: 900;
     color:${props => props.darkBlue ? COLORS.darkBlue : COLORS.white};
@@ -29,7 +29,7 @@ export const H3 = styled(H1) `
 // Body Copy
 export const P = styled.p `
     padding: 1rem 0rem;
-    margin: 0 auto;
+    margin: ${props => props.margin ? props.margin : "0 auto" };
     font-family: 'Source Serif Pro', serif;
     font-weight: 400;
     color:${props => props.color ? props.color : COLORS.white};

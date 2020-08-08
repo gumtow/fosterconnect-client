@@ -146,7 +146,7 @@ export default class App extends Component {
           </Switch>
 
         {/* Footer */}
-        <Default bg="#495867" padding="2rem" footer height="650px">
+        <Default bg="#495867"  footer height="650px">
           <FlexContainer reverse="column">
             <Headings.H3 center padding="1rem 12rem">
               "I alone cannot change the world, but I can cast a stone across the waters to create many ripples."

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Default from '../Default';
+import { FlexContainer } from '../style/default';
+import * as Headings from '../style/type';
+import { EditBtn } from '../style/buttons';
+import { COLORS } from '../style/constants';
 
 
 export default class ChildShow extends Component {
@@ -16,15 +20,15 @@ export default class ChildShow extends Component {
     }
 
 
-    getChildData(){
-        axios.get(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, {withCredentials: true}).then(response => {
+    getChildData() {
+        axios.get(`https://fosterconnect-api.herokuapp.com/children/${this.props.match.params.id}`, { withCredentials: true }).then(response => {
             this.setState({
                 child: response.data
             })
         }).catch(error => {
             console.log("children db", error);
         })
-        axios.get(`https://fosterconnect-api.herokuapp.com/items`, {withCredentials: true}).then(response => {
+        axios.get(`https://fosterconnect-api.herokuapp.com/items`, { withCredentials: true }).then(response => {
             this.setState({
                 items: response.data
             })
@@ -33,50 +37,54 @@ export default class ChildShow extends Component {
         })
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getChildData();
     }
 
-    handleLogoutClick=()=> {
-        axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response =>{
+    handleLogoutClick = () => {
+        axios.delete("https://fosterconnect-api.herokuapp.com/logout", { withCredentials: true }).then(response => {
             this.props.handleLogout();
             this.props.history.push("/");
         }).catch(error => {
             console.log("logout error", error);
-        }); 
+        });
     }
 
-    render(){
-        if (this.state.child){
-            return(
+
+
+    render() {
+        if (this.state.child) {
+            return (
                 <Default>
-                    <div>
-                        <button onClick={()=>this.handleLogoutClick()}>Logout</button>
-                        <h1>Hello {this.state.child.name}</h1>
-                        <Link to={`/children/${this.state.child.id}/edit`}><button>Edit</button></Link>
+                    <FlexContainer reverse="column">
+                        <Headings.H1 darkBlue>{this.state.child.name}</Headings.H1>
+                        <Headings.P color={COLORS.darkBlue}>{this.state.child.description}</Headings.P>
+                        <Headings.H2>Images</Headings.H2>
                         <div>
-                            {this.state.items && this.state.items.map((item, i)=>{
-                                if (item.child_id === this.state.child.id){
-                                    return(
+                            {this.state.items && this.state.items.map((item, i) => {
+                                if (item.image && (item.child_id === this.state.child.id)) {
+                                    return (
                                         <div key={i}>
-                                            <img src={item.image} alt={item.id}/>
+                                            <img src={item.image} alt={item.id} />
                                         </div>
                                     )
                                 }
                             })}
                         </div>
+                        <Headings.H2>Documents</Headings.H2>
                         <div>
-                            {this.state.items && this.state.items.map((item, i)=>{
-                                if (item.child_id === this.state.child.id){
-                                    return(
+                            {this.state.items && this.state.items.map((item, i) => {
+                                if (item.file && (item.child_id === this.state.child.id)) {
+                                    return (
                                         <div key={i}>
-                                            <a href={item.file} download>{this.state.child.name} doc {i}</a>
+                                            <a href={`${item.file} .jpg`}>{this.state.child.name} doc {i}</a>
                                         </div>
                                     )
                                 }
                             })}
                         </div>
-                    </div>
+                        <Link to={`/children/${this.state.child.id}/edit`}><EditBtn>Edit</EditBtn></Link>
+                    </FlexContainer>
                 </Default>
             )
         } else {
