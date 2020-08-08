@@ -30,7 +30,8 @@ export default class ChildEdit extends Component {
             this.setState({
                 child: response.data,
                 name: response.data.name,
-                status: response.data.status
+                status: response.data.status,
+                description: response.data.description
             })
         }).catch(error => {
             console.log("children db", error);
